@@ -3,5 +3,10 @@ public class deneme {
         System.out.println("merhaba github");
 
         System.out.println("Tekrar merhaba github");
+          System.out.println("Tekrar merhaba github");
+        
+          System.out.println("gitHub dan IJ- ye merhaba ");
+
+        
     }
 }
