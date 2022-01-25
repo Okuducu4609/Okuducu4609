@@ -15,6 +15,7 @@ public abstract class BasePage {
         String tab = "//div[.='" + str + "']";
         return Driver.get().findElement(By.xpath(tab));
 
+
     }
     public WebElement getLink(String linkName){
         return Driver.get().findElement(By.linkText(linkName));
