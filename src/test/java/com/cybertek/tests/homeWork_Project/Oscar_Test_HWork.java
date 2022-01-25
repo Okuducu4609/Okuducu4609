@@ -39,6 +39,7 @@ public class Oscar_Test_HWork {
             */
 
     WebDriver driver;
+
     @BeforeMethod
 
     public void setup() {
@@ -46,11 +47,13 @@ public class Oscar_Test_HWork {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
+
     @AfterMethod
     public void quit() {
 
-       driver.quit();
+        driver.quit();
     }
+
     @Test
     public void Task1() throws InterruptedException {
         driver.get("https://chercher.tech/practice/explicit-wait-sample-selenium-webdriver");
@@ -66,20 +69,21 @@ public class Oscar_Test_HWork {
         driver.switchTo().alert().accept();
     }
 
-        @Test
-        public void Task2() {
-            driver.get("https://chercher.tech/practice/explicit-wait-sample-selenium-webdriver");
-            WebElement button10Second = driver.findElement(By.id("enable-button"));
-            button10Second.click();
-            WebDriverWait wait = new WebDriverWait(driver, 11);
-            wait.until(ExpectedConditions.visibilityOf(button10Second));
-
-            WebElement getTextActualElement = driver.findElement(By.id("disable"));
-
-            getTextActualElement.isEnabled();
-        }
     @Test
-    public void Task3(){
+    public void Task2() {
+        driver.get("https://chercher.tech/practice/explicit-wait-sample-selenium-webdriver");
+        WebElement button10Second = driver.findElement(By.id("enable-button"));
+        button10Second.click();
+        WebDriverWait wait = new WebDriverWait(driver, 11);
+        wait.until(ExpectedConditions.visibilityOf(button10Second));
+
+        WebElement getTextActualElement = driver.findElement(By.id("disable"));
+
+        getTextActualElement.isEnabled();
+    }
+
+    @Test
+    public void Task3() {
         driver.get("http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx");
         driver.findElement(By.cssSelector("[type='text']")).sendKeys("Tester");
         driver.findElement(By.cssSelector("[type='password']")).sendKeys("test");
@@ -87,33 +91,33 @@ public class Oscar_Test_HWork {
         driver.findElement(By.id("ctl00_MainContent_login_button")).click();
         driver.findElement(By.linkText("Order")).click();
 
-       // 4. Verify under Product Information, selected option is “MyMoney”
+        // 4. Verify under Product Information, selected option is “MyMoney”
 
-        WebElement order=driver.findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct"));
+        WebElement order = driver.findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct"));
 
-        Select productInformation=new Select(order);
-        String actuelProduct=productInformation.getFirstSelectedOption().getText();
-        Assert.assertEquals(actuelProduct,"MyMoney");
+        Select productInformation = new Select(order);
+        String actuelProduct = productInformation.getFirstSelectedOption().getText();
+        Assert.assertEquals(actuelProduct, "MyMoney");
 
         //5. Then select FamilyAlbum, make quantity 2, and click Calculate,
 
         productInformation.selectByValue("FamilyAlbum");
-       WebElement quantit= driver.findElement(By.id("ctl00_MainContent_fmwOrder_txtQuantity"));
-       quantit.clear();
-       quantit.sendKeys("2");
-       driver.findElement(By.cssSelector("[type='submit']")).click();
+        WebElement quantit = driver.findElement(By.id("ctl00_MainContent_fmwOrder_txtQuantity"));
+        quantit.clear();
+        quantit.sendKeys("2");
+        driver.findElement(By.cssSelector("[type='submit']")).click();
 
 
-     //   Then verify Total is equal to Quantity*PricePerUnit
+        //   Then verify Total is equal to Quantity*PricePerUnit
 
 
-       WebElement totalPrice=driver.findElement(By.id("ctl00_MainContent_fmwOrder_txtTotal"));
+        WebElement totalPrice = driver.findElement(By.id("ctl00_MainContent_fmwOrder_txtTotal"));
 
-       WebElement priceperUnit=driver.findElement(By.id("ctl00_MainContent_fmwOrder_txtUnitPrice"));
+        WebElement priceperUnit = driver.findElement(By.id("ctl00_MainContent_fmwOrder_txtUnitPrice"));
 
-       String priceUnit=priceperUnit.getAttribute("value");
-       String quantity2= quantit.getAttribute("value");
-       String total=totalPrice.getAttribute("value");
+        String priceUnit = priceperUnit.getAttribute("value");
+        String quantity2 = quantit.getAttribute("value");
+        String total = totalPrice.getAttribute("value");
 
         //String values
         System.out.println("String_priceUnit = " + priceUnit);
@@ -121,44 +125,22 @@ public class Oscar_Test_HWork {
         System.out.println("String_total = " + total);
 
         //Integer values
-               int unitPriceInt=Integer.parseInt(priceUnit);
-               int quant2=Integer.parseInt(quantity2);
-               int totalActuel=Integer.parseInt(total);
+        int unitPriceInt = Integer.parseInt(priceUnit);
+        int quant2 = Integer.parseInt(quantity2);
+        int totalActuel = Integer.parseInt(total);
 
-               int totalExpected=unitPriceInt*quant2;
+        int totalExpected = unitPriceInt * quant2;
 
         System.out.println("totalActuel = " + totalActuel);
-        System.out.println("totalExpected = " + unitPriceInt*quant2);
+        System.out.println("totalExpected = " + unitPriceInt * quant2);
 
-       Assert.assertEquals(totalActuel, totalExpected);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
+        Assert.assertEquals(totalActuel, totalExpected);
 
 
     }
+
+
+}
 
 
 

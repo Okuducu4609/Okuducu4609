@@ -1,0 +1,9 @@
+some text here
+
+resources path:
+C:\Users\HP\IdeaProjects\EU7TestNGSelenium\src\test\resources\textfile.txt
+
+File Upload path:
+C:\Users\HP\IdeaProjects\EU7TestNGSelenium\src\test\java\com\cybertek\tests\day10_file_upload\FileUploadTest.java
+
+ filePath: src/test/resources/textfile.txt
