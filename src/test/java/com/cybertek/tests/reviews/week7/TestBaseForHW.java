@@ -56,6 +56,7 @@ public class TestBaseForHW {
         actions = new Actions(driver);
         wait = new WebDriverWait(driver, 10);
         driver.get(ConfigurationReader.get("qa2_url"));
+
         new LoginPage().loginAsStoreManager(); // Login as a store manager
 
         page = new CalendarEventsPage();

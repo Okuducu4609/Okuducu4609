@@ -25,6 +25,7 @@ public class TestBaseTwo {
         wait = new WebDriverWait(driver,10);
         driver.get(ConfigurationReaderTwo.get("demoblaze.url"));
 
+
     }
 
     @AfterMethod

@@ -8,7 +8,7 @@ public class CallWebDriverFactory {
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
 
-        driver.get("https://www.google.com");
+       driver.get("https://www.google.com");
 
         String title = driver.getTitle();
 
