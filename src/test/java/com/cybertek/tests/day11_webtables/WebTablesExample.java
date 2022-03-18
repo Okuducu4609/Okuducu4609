@@ -65,6 +65,7 @@ public class WebTablesExample {
         List<WebElement> allRowsWithoutHeader = driver.findElements(By.xpath("//table[@id='table1']/tbody/tr"));
         System.out.println(allRowsWithoutHeader.size());
     }
+
     @Test
     public void getRow() {
 

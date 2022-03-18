@@ -9,6 +9,7 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class OpenBrowser {
 
+
     public static void main(String[] args) {
 
         //we have to enter this line every time we want to open chrome
@@ -25,9 +26,12 @@ public class OpenBrowser {
         ////
         ////      //this line will allow selenium to automate firefox browserry time we want to open chrome
 
+
      WebDriverManager.chromedriver().setup();
       WebDriver driver=new ChromeDriver();
       // WebDriver driver=new SafariDriver();
+
+
 
 
     //   driver.get("https://cybertekschool.com");
